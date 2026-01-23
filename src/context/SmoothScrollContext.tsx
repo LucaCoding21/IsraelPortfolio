@@ -47,6 +47,15 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     // SSR protection - only run on client
     if (typeof window === 'undefined') return;
 
+    // Disable Lenis on mobile for better performance
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      // Just update ScrollTrigger on native scroll for mobile
+      const handleScroll = () => ScrollTrigger.update();
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

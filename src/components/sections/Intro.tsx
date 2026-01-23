@@ -12,7 +12,20 @@ export default function Intro() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
+    // Skip heavy animations on mobile for performance
+    const isMobile = window.innerWidth < 768;
+
     const ctx = gsap.context(() => {
+      if (isMobile) {
+        // Simple fade-in only on mobile
+        gsap.set(['.intro-quote', '.bio-line', '.intro-image-wrapper'], {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        });
+        return;
+      }
+
       // Animate the large quote
       gsap.fromTo(
         '.intro-quote',

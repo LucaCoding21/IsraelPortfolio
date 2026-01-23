@@ -7,8 +7,19 @@ import Image from 'next/image';
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // Skip parallax effect on mobile for performance
+    if (isMobile) return;
+
     const handleScroll = () => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -19,12 +30,12 @@ export default function Hero() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]);
 
-  // Calculate transforms based on scroll progress
-  const imageScale = 1 + scrollProgress * 0.15;
-  const imageOpacity = Math.max(0, 1 - scrollProgress * 1.25);
-  const contentY = `${scrollProgress * 20}%`;
+  // Calculate transforms based on scroll progress (skip on mobile)
+  const imageScale = isMobile ? 1 : 1 + scrollProgress * 0.15;
+  const imageOpacity = isMobile ? 1 : Math.max(0, 1 - scrollProgress * 1.25);
+  const contentY = isMobile ? '0%' : `${scrollProgress * 20}%`;
 
   return (
     <section
@@ -124,8 +135,8 @@ export default function Hero() {
       >
         <motion.div
           className="flex flex-col items-center gap-1.5 md:gap-2"
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          animate={isMobile ? undefined : { y: [0, 6, 0] }}
+          transition={isMobile ? undefined : { duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
           <span
             className="text-[0.625rem] md:text-xs"

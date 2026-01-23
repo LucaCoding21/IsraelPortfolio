@@ -203,9 +203,9 @@ export default function CategoryCards() {
           viewBox="0 0 1440 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 w-full md:hidden"
+          className="absolute -bottom-px w-full md:hidden"
           preserveAspectRatio="none"
-          style={{ height: '80px' }}
+          style={{ height: '82px' }}
         >
           <path
             d="M0 120V80C360 100 720 60 1080 80C1260 90 1440 100 1440 100V120H0Z"
@@ -304,7 +304,14 @@ export default function CategoryCards() {
                     color: 'rgba(255, 255, 255, 0.5)',
                   }}
                 >
-                  {category.arrow}
+                  {category.arrow === '↗' ? (
+                    <>
+                      <span className="md:hidden">→</span>
+                      <span className="hidden md:inline">↗</span>
+                    </>
+                  ) : (
+                    category.arrow
+                  )}
                 </span>
               </div>
             </motion.div>

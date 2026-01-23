@@ -5,6 +5,18 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import MagneticButton from '../ui/MagneticButton';
 import { socialLinks } from '@/lib/constants';
 
+// Hook to detect mobile
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return isMobile;
+}
+
 function useTime() {
   const [time, setTime] = useState(new Date());
 
@@ -29,6 +41,7 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [emailHovered, setEmailHovered] = useState(false);
   const time = useTime();
+  const isMobile = useIsMobile();
 
   const handleCopyEmail = async () => {
     try {
@@ -92,8 +105,8 @@ export default function Contact() {
             <motion.div
               className="h-1.5 w-1.5 rounded-full md:h-2 md:w-2"
               style={{ backgroundColor: '#6B9080' }}
-              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              animate={isMobile ? undefined : { scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+              transition={isMobile ? undefined : { duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             />
             <span
               className="text-[0.625rem] md:text-xs"
@@ -356,8 +369,8 @@ export default function Contact() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={isMobile ? undefined : { y: [0, -3, 0] }}
+                  transition={isMobile ? undefined : { duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </motion.svg>

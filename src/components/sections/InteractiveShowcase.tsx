@@ -1,9 +1,21 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+
+// Hook to detect mobile
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return isMobile;
+}
 
 const photos = [
   {
@@ -30,21 +42,25 @@ function PhotoCard({
   className,
   delay,
   onClick,
+  isMobile,
 }: {
   src: string;
   alt: string;
   className?: string;
   delay: number;
   onClick: () => void;
+  isMobile: boolean;
 }) {
+  // On mobile, skip whileInView animations for performance
   return (
     <motion.button
       onClick={onClick}
       className={`group relative overflow-hidden rounded-lg ${className}`}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
+      animate={isMobile ? { opacity: 1, y: 0 } : undefined}
+      viewport={isMobile ? undefined : { once: true, margin: '-50px' }}
+      transition={isMobile ? { duration: 0 } : { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
       style={{ cursor: 'pointer' }}
     >
       <Image
@@ -89,6 +105,7 @@ export default function InteractiveShowcase() {
   const containerRef = useRef<HTMLElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
   const router = useRouter();
+  const isMobile = useIsMobile();
 
   const handlePhotoClick = () => {
     router.push('/portfolio');
@@ -142,18 +159,18 @@ export default function InteractiveShowcase() {
           {/* Mobile layout - staggered 2x2 */}
           <div className="space-y-3">
             <div className="h-[280px]">
-              <PhotoCard src={photos[0].src} alt={photos[0].alt} className="h-full w-full" delay={0} onClick={handlePhotoClick} />
+              <PhotoCard src={photos[0].src} alt={photos[0].alt} className="h-full w-full" delay={0} onClick={handlePhotoClick} isMobile={isMobile} />
             </div>
             <div className="h-[200px]">
-              <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0.2} onClick={handlePhotoClick} />
+              <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0.2} onClick={handlePhotoClick} isMobile={isMobile} />
             </div>
           </div>
           <div className="mt-12 space-y-3">
             <div className="h-[220px]">
-              <PhotoCard src={photos[1].src} alt={photos[1].alt} className="h-full w-full" delay={0.1} onClick={handlePhotoClick} />
+              <PhotoCard src={photos[1].src} alt={photos[1].alt} className="h-full w-full" delay={0.1} onClick={handlePhotoClick} isMobile={isMobile} />
             </div>
             <div className="h-[260px]">
-              <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0.3} onClick={handlePhotoClick} />
+              <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0.3} onClick={handlePhotoClick} isMobile={isMobile} />
             </div>
           </div>
         </div>
@@ -168,6 +185,7 @@ export default function InteractiveShowcase() {
               className="h-full w-full"
               delay={0}
               onClick={handlePhotoClick}
+              isMobile={isMobile}
             />
           </div>
 
@@ -179,6 +197,7 @@ export default function InteractiveShowcase() {
               className="h-full w-full"
               delay={0.1}
               onClick={handlePhotoClick}
+              isMobile={isMobile}
             />
           </div>
 
@@ -190,6 +209,7 @@ export default function InteractiveShowcase() {
               className="h-full w-full"
               delay={0.2}
               onClick={handlePhotoClick}
+              isMobile={isMobile}
             />
           </div>
 
@@ -201,6 +221,7 @@ export default function InteractiveShowcase() {
               className="h-full w-full"
               delay={0.3}
               onClick={handlePhotoClick}
+              isMobile={isMobile}
             />
           </div>
         </div>

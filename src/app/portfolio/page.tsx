@@ -5,6 +5,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Navigation from '@/components/ui/Navigation';
 
+// Hook to detect mobile
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return isMobile;
+}
+
 // Categories for filtering
 const categories = ['ALL', 'SPORTS', 'EVENTS', 'PORTRAITS', 'LIFESTYLE'] as const;
 type Category = typeof categories[number];
@@ -26,6 +38,7 @@ const portfolioImages: {
 export default function PortfolioPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<Category>('ALL');
+  const isMobile = useIsMobile();
 
   // Filter images based on selected category
   const filteredImages = activeCategory === 'ALL'
@@ -163,9 +176,9 @@ export default function PortfolioPage() {
                   <motion.div
                     key={image.src}
                     className="mb-2 break-inside-avoid sm:mb-4"
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{
+                    transition={isMobile ? { duration: 0 } : {
                       duration: 0.6,
                       delay: 0.1 + index * 0.08,
                       ease: [0.16, 1, 0.3, 1],
