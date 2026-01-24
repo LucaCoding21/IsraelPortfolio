@@ -80,7 +80,7 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/hero-cutout.png"
+          src="/cutout2.png"
           alt="Soccer player in action"
           fill
           className="object-cover object-center"
