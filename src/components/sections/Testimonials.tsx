@@ -2,10 +2,6 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence, PanInfo } from 'framer-motion';
-import AnimatedWave, {
-  WAVE_SHOWCASE_TO_TESTIMONIALS,
-  WAVE_TESTIMONIALS_TO_CONTACT,
-} from '@/components/ui/AnimatedWave';
 
 const testimonials = [
   {
