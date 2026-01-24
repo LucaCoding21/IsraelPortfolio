@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import AnimatedWave, { WAVE_CATEGORY_TO_INTRO } from '@/components/ui/AnimatedWave';
 
 const categories = [
   {
