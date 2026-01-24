@@ -49,7 +49,7 @@ export default function PageLoader() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
             >
-              Israel Njagih
+              Njagih Studios
             </motion.h1>
 
             {/* Accent line - terracotta */}

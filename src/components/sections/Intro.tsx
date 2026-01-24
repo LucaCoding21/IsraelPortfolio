@@ -144,7 +144,7 @@ export default function Intro() {
                 >
                   <Image
                     src="/israel.jpg"
-                    alt="Israel Njagih - Vancouver photographer"
+                    alt="Njagih Studios - Vancouver photographer"
                     fill
                     className="object-cover"
                     quality={90}
@@ -236,39 +236,6 @@ export default function Intro() {
                 of a community gathering, I&apos;m here to capture the real story. No
                 forced poses, just genuine connection.
               </p>
-            </div>
-
-            {/* Mini stats */}
-            <div className="bio-line mb-8 flex flex-wrap gap-8">
-              {[
-                { number: '5+', label: 'Years Experience' },
-                { number: '200+', label: 'Events Covered' },
-                { number: '50+', label: 'Happy Clients' },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p
-                    style={{
-                      fontFamily: "'Libre Baskerville', serif",
-                      fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                      color: '#1A2B3C',
-                      fontWeight: 400,
-                    }}
-                  >
-                    {stat.number}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "'Source Sans 3', sans-serif",
-                      fontSize: '0.75rem',
-                      letterSpacing: '0.05em',
-                      color: '#8899A6',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
             </div>
 
             {/* CTA */}

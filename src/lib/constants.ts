@@ -1,15 +1,15 @@
 // Shared navigation items
 export const navItems = [
   { label: 'About', href: '#about' },
+  { label: 'Services', href: '/services' },
   { label: 'Contact', href: '#contact' },
 ] as const;
 
 // Services offered
 export const services = [
-  { name: 'Sports Photography', description: 'Capturing the energy and emotion of the game' },
-  { name: 'Event Coverage', description: 'From community gatherings to celebrations' },
-  { name: 'Portrait Sessions', description: 'Natural, relaxed portraits that feel like you' },
-  { name: 'Lifestyle Shoots', description: 'Everyday moments made memorable' },
+  { name: 'Weddings', description: 'Your love story, beautifully told' },
+  { name: 'Festivals & Sports', description: 'Energy captured in motion' },
+  { name: 'Corporate', description: 'Professional imagery that elevates your brand' },
 ] as const;
 
 // Social links

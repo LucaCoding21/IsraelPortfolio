@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import AnimatedWave, { WAVE_CATEGORY_TO_INTRO } from '@/components/ui/AnimatedWave';
 
 const categories = [
   {
@@ -23,8 +24,9 @@ const categories = [
   {
     title: 'Services',
     image: '/isreal3.jpg',
-    href: '#about',
-    arrow: '↗',
+    href: '/services',
+    isPage: true,
+    arrow: '→',
   },
   {
     title: 'Get in Touch',
@@ -110,7 +112,7 @@ function CardOverlay({ index }: { index: number }) {
       // Vertical stacked services
       return (
         <div className="flex flex-col items-center gap-1">
-          {['SPORTS', 'EVENTS', 'PORTRAITS'].map((text, i) => (
+          {['WEDDINGS', 'FESTIVALS', 'CORPORATE'].map((text, i) => (
             <p
               key={text}
               style={{

@@ -9,8 +9,9 @@ import { socialLinks } from '@/lib/constants';
 const menuItems: { label: string; href: string; isPage?: boolean; image: string }[] = [
   { label: 'Home', href: '#', image: '/israel1.jpg' },
   { label: 'Portfolio', href: '/portfolio', isPage: true, image: '/israel2.jpg' },
-  { label: 'About', href: '#about', image: '/isreal3.jpg' },
-  { label: 'Contact', href: '#contact', image: '/isreal4.jpg' },
+  { label: 'Services', href: '/services', isPage: true, image: '/isreal3.jpg' },
+  { label: 'About', href: '#about', image: '/isreal4.jpg' },
+  { label: 'Contact', href: '#contact', image: '/israel1.jpg' },
 ];
 
 export default function Navigation() {
@@ -214,7 +215,7 @@ export default function Navigation() {
               ease: [0.34, 1.56, 0.64, 1], // Spring-like bounce
             }}
           >
-            Israel Njagih
+            Njagih Studios
           </motion.span>
         </motion.a>
 

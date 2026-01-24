@@ -29,10 +29,10 @@ const portfolioImages: {
   height: number;
   category: Category[];
 }[] = [
-  { src: '/israel1.jpg', alt: 'Photography by Israel Njagih', width: 800, height: 1200, category: ['ALL'] },
-  { src: '/israel2.jpg', alt: 'Photography by Israel Njagih', width: 800, height: 600, category: ['ALL'] },
-  { src: '/isreal3.jpg', alt: 'Photography by Israel Njagih', width: 800, height: 1000, category: ['ALL'] },
-  { src: '/isreal4.jpg', alt: 'Photography by Israel Njagih', width: 800, height: 800, category: ['ALL'] },
+  { src: '/israel1.jpg', alt: 'Photography by Njagih Studios', width: 800, height: 1200, category: ['ALL'] },
+  { src: '/israel2.jpg', alt: 'Photography by Njagih Studios', width: 800, height: 600, category: ['ALL'] },
+  { src: '/isreal3.jpg', alt: 'Photography by Njagih Studios', width: 800, height: 1000, category: ['ALL'] },
+  { src: '/isreal4.jpg', alt: 'Photography by Njagih Studios', width: 800, height: 800, category: ['ALL'] },
 ];
 
 export default function PortfolioPage() {

@@ -20,19 +20,19 @@ function useIsMobile() {
 const photos = [
   {
     src: '/israel1.jpg',
-    alt: 'Photography by Israel Njagih',
+    alt: 'Photography by Njagih Studios',
   },
   {
     src: '/israel2.jpg',
-    alt: 'Photography by Israel Njagih',
+    alt: 'Photography by Njagih Studios',
   },
   {
     src: '/isreal3.jpg',
-    alt: 'Photography by Israel Njagih',
+    alt: 'Photography by Njagih Studios',
   },
   {
     src: '/isreal4.jpg',
-    alt: 'Photography by Israel Njagih',
+    alt: 'Photography by Njagih Studios',
   },
 ];
 

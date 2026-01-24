@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Israel Njagih | Vancouver Photographer',
+  title: 'Njagih Studios | Vancouver Photographer',
   description:
     'Hey, I\'m Israel. A Vancouver-based photographer capturing authentic moments in sports, community events, and everyday life. Let\'s create something real together.',
   keywords: [
@@ -14,16 +14,16 @@ export const metadata: Metadata = {
     'lifestyle photography',
     'authentic photography',
   ],
-  authors: [{ name: 'Israel Njagih' }],
+  authors: [{ name: 'Njagih Studios' }],
   openGraph: {
-    title: 'Israel Njagih | Vancouver Photographer',
+    title: 'Njagih Studios | Vancouver Photographer',
     description: 'Capturing authentic moments in Vancouver. Sports, events, and the stories in between.',
     type: 'website',
     locale: 'en_CA',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Israel Njagih | Vancouver Photographer',
+    title: 'Njagih Studios | Vancouver Photographer',
     description: 'Capturing authentic moments in Vancouver.',
   },
 };

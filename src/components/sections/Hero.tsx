@@ -48,12 +48,12 @@ export default function Hero() {
         style={{ scale: imageScale, opacity: imageOpacity, willChange: 'transform, opacity' }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=85&auto=format&fit=crop"
-          alt="Dynamic sports photography"
+          src="/hero-bg.jpg"
+          alt="Soccer players in action during a night game"
           fill
           className="object-cover object-center"
           priority
-          quality={95}
+          quality={90}
           sizes="100vw"
         />
         {/* Gradient overlay */}
@@ -70,9 +70,31 @@ export default function Hero() {
         />
       </motion.div>
 
+      {/* Player cutout overlay - positioned to match background */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 z-20"
+        style={{
+          scale: imageScale,
+          opacity: imageOpacity,
+          willChange: 'transform, opacity',
+        }}
+      >
+        <Image
+          src="/hero-cutout.png"
+          alt="Soccer player in action"
+          fill
+          className="object-cover object-center"
+          style={{
+            filter: 'brightness(0.8) saturate(0.85) contrast(0.95)',
+          }}
+          priority
+          sizes="100vw"
+        />
+      </motion.div>
+
       {/* Bottom gradient fade - creates smooth transition to next section (Andy Hardy style) */}
       <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[5]"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-[25]"
         style={{
           height: '50%',
           background: `linear-gradient(
@@ -86,49 +108,52 @@ export default function Hero() {
         }}
       />
 
-      {/* Content */}
+      {/* Content - positioned for dramatic player overlap */}
       <motion.div
-        className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center"
+        className="relative z-10 flex h-full flex-col items-center justify-start px-6 pt-[28vh] text-center md:pt-[32vh]"
         style={{ y: contentY, willChange: 'transform' }}
       >
-        {/* Main title */}
+        {/* Main title - single line */}
         <motion.h1
-          className="mb-4"
+          className="mb-2 whitespace-nowrap"
           style={{
             fontFamily: "'Libre Baskerville', Georgia, serif",
-            fontSize: 'clamp(3.5rem, 12vw, 8rem)',
+            fontSize: 'clamp(3rem, 12vw, 11rem)',
             fontWeight: 400,
-            lineHeight: 0.95,
+            lineHeight: 0.9,
             color: '#FFFFFF',
-            textShadow: '0 4px 40px rgba(0,0,0,0.2)',
+            textShadow: '0 4px 60px rgba(0,0,0,0.4), 0 2px 20px rgba(0,0,0,0.3)',
           }}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          Israel Njagih
+          Njagih Studios
         </motion.h1>
-
-        {/* Tagline */}
-        <motion.p
-          style={{
-            fontFamily: "'Source Sans 3', sans-serif",
-            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            fontWeight: 400,
-            color: 'rgba(255, 255, 255, 0.85)',
-            letterSpacing: '0.05em',
-          }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          Vancouver Photographer | Sports, Events & Community
-        </motion.p>
       </motion.div>
+
+      {/* Tagline - on top of player cutout */}
+      <motion.p
+        className="absolute left-1/2 z-30 -translate-x-1/2"
+        style={{
+          top: 'calc(32vh + clamp(4rem, 13vw, 12rem))',
+          fontFamily: "'Source Sans 3', sans-serif",
+          fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
+          fontWeight: 400,
+          color: 'rgba(255, 255, 255, 0.9)',
+          letterSpacing: '0.08em',
+          textShadow: '0 2px 20px rgba(0,0,0,0.5)',
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
+      >
+        Vancouver Photographer | Sports, Events & Community
+      </motion.p>
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 md:bottom-8"
+        className="absolute bottom-6 left-1/2 z-30 -translate-x-1/2 md:bottom-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.8, duration: 0.6 }}
@@ -160,7 +185,7 @@ export default function Hero() {
 
       {/* Location badge - bottom left */}
       <motion.div
-        className="absolute bottom-8 left-6 z-10 hidden md:left-10 md:block"
+        className="absolute bottom-8 left-6 z-30 hidden md:left-10 md:block"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.6, duration: 0.6 }}
@@ -180,7 +205,7 @@ export default function Hero() {
 
       {/* Availability badge - bottom right */}
       <motion.div
-        className="absolute bottom-8 right-6 z-10 hidden md:right-10 md:block"
+        className="absolute bottom-8 right-6 z-30 hidden md:right-10 md:block"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.6, duration: 0.6 }}
