@@ -31,10 +31,9 @@ function AnimatedNumber({ value, suffix, isInView }: { value: number; suffix: st
 }
 
 const stats = [
-  { value: 200, suffix: '+', label: 'Events Covered' },
+  { value: 3, suffix: '', label: 'Years Experience' },
+  { value: 70, suffix: '+', label: 'Events Covered' },
   { value: 50, suffix: '+', label: 'Happy Clients' },
-  { value: 15, suffix: 'K+', label: 'Photos Delivered' },
-  { value: 5, suffix: '+', label: 'Years Experience' },
 ];
 
 export default function Stats() {
@@ -48,7 +47,7 @@ export default function Stats() {
       style={{ backgroundColor: '#0A0A0A' }}
     >
       <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
+        <div className="grid grid-cols-3 gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

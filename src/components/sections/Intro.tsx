@@ -108,11 +108,11 @@ export default function Intro() {
               fontWeight: 400,
             }}
           >
-            &ldquo;I don&apos;t just take photos.
+            &ldquo;Present in every moment,
             <span style={{ fontStyle: 'italic', color: '#6B9080' }}>
-              {' '}I show up, bring good energy
+              {' '}creating photography rooted in connection
             </span>
-            , and somehow great shots just happen.&rdquo;
+            {' '}and trust.&rdquo;
           </p>
         </div>
 
@@ -219,22 +219,11 @@ export default function Intro() {
                   color: '#4A5568',
                 }}
               >
-                I&apos;m a Vancouver-based photographer specializing in sports, events,
-                and community moments. My approach is simple: be present, stay curious,
-                and let authentic moments unfold naturally.
-              </p>
-              <p
-                className="bio-line"
-                style={{
-                  fontFamily: "'Source Sans 3', sans-serif",
-                  fontSize: 'clamp(0.9375rem, 1.5vw, 1.125rem)',
-                  lineHeight: 1.8,
-                  color: '#4A5568',
-                }}
-              >
-                Whether it&apos;s the intensity of a game-winning play or the quiet joy
-                of a community gathering, I&apos;m here to capture the real story. No
-                forced poses, just genuine connection.
+                I&apos;m a photographer who believes strong images start with presence
+                and trust. I take a calm, thoughtful approach to every shoot, creating
+                an environment where people feel comfortable and moments unfold naturally.
+                By focusing on real connection and honest interaction, I deliver imagery
+                that feels authentic, intentional, and lasting.
               </p>
             </div>
 
