@@ -7,7 +7,7 @@ const SITE_URL = 'https://njagihstudios.com';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Njagih Studios | Vancouver Photographer',
+    default: 'Njagih Studios | Israel Njagih — Vancouver Photographer',
     template: '%s | Njagih Studios',
   },
   description:
@@ -45,16 +45,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Njagih Studios | Vancouver Photographer',
+    title: 'Njagih Studios | Israel Njagih — Vancouver Photographer | Sports, Events & Weddings',
     description:
-      'Capturing authentic moments in Vancouver. Sports, events, weddings, and the stories in between.',
+      "Israel Njagih is a Vancouver-based photographer specializing in sports, events, weddings, and corporate photography. Authentic moments, real connections — let's create something together.",
     type: 'website',
     locale: 'en_CA',
     url: SITE_URL,
     siteName: 'Njagih Studios',
     images: [
       {
-        url: '/hero-bg.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Njagih Studios - Vancouver Photography',
@@ -64,10 +64,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Njagih Studios | Vancouver Photographer',
+    title: 'Njagih Studios | Israel Njagih — Vancouver Photographer | Sports, Events & Weddings',
     description:
-      'Capturing authentic moments in Vancouver. Sports, events, weddings, and the stories in between.',
-    images: ['/hero-bg.jpg'],
+      "Israel Njagih is a Vancouver-based photographer specializing in sports, events, weddings, and corporate photography. Authentic moments, real connections — let's create something together.",
+    images: ['/og-image.jpg'],
     creator: '@njagih_studios',
   },
   other: {

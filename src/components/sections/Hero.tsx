@@ -48,61 +48,27 @@ export default function Hero() {
         style={{ scale: imageScale, opacity: imageOpacity, willChange: 'transform, opacity' }}
       >
         <Image
-          src="/hero-bg.jpg"
-          alt="Vancouver sports photography - soccer players in action during a night game by Njagih Studios"
+          src="/njagih-hero.jpg"
+          alt="Black and white portrait photography by Njagih Studios Vancouver"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[center_47%]"
           priority
-          quality={90}
-          sizes="100vw"
-        />
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(
-              180deg,
-              rgba(26, 43, 60, 0.2) 0%,
-              rgba(26, 43, 60, 0.1) 50%,
-              rgba(26, 43, 60, 0.5) 100%
-            )`,
-          }}
-        />
-      </motion.div>
-
-      {/* Player cutout overlay - positioned to match background */}
-      <motion.div
-        className="pointer-events-none absolute inset-0 z-20"
-        style={{
-          scale: imageScale,
-          opacity: imageOpacity,
-          willChange: 'transform, opacity',
-        }}
-      >
-        <Image
-          src="/cutout2.png"
-          alt="Soccer player action shot - sports photography by Njagih Studios Vancouver"
-          fill
-          className="object-cover object-center"
-          style={{
-            filter: 'brightness(0.8) saturate(0.85) contrast(0.95)',
-          }}
-          priority
+          quality={85}
           sizes="100vw"
         />
       </motion.div>
 
-      {/* Bottom gradient fade - creates smooth transition to next section (Andy Hardy style) */}
+      {/* Bottom gradient fade - creates smooth transition to next section */}
       <div
         className="pointer-events-none absolute bottom-0 left-0 right-0 z-[25]"
         style={{
-          height: '50%',
+          height: '35%',
           background: `linear-gradient(
             to bottom,
             transparent 0%,
-            rgba(15, 15, 15, 0.3) 25%,
-            rgba(15, 15, 15, 0.7) 55%,
-            rgba(15, 15, 15, 0.95) 80%,
+            rgba(15, 15, 15, 0.3) 30%,
+            rgba(15, 15, 15, 0.7) 60%,
+            rgba(15, 15, 15, 0.95) 85%,
             rgb(15, 15, 15) 100%
           )`,
         }}
@@ -110,7 +76,7 @@ export default function Hero() {
 
       {/* Content - positioned for dramatic player overlap */}
       <motion.div
-        className="relative z-10 flex h-full flex-col items-center justify-start px-6 pt-[28vh] text-center md:pt-[32vh]"
+        className="relative z-10 flex h-full flex-col items-center justify-start px-6 pt-[22vh] text-center md:pt-[26vh]"
         style={{ y: contentY, willChange: 'transform' }}
       >
         {/* Main title - single line */}
@@ -136,7 +102,7 @@ export default function Hero() {
       <motion.p
         className="absolute left-1/2 z-30 -translate-x-1/2"
         style={{
-          top: 'calc(32vh + clamp(4rem, 13vw, 12rem))',
+          top: 'calc(26vh + clamp(4rem, 13vw, 12rem))',
           fontFamily: "'Source Sans 3', sans-serif",
           fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
           fontWeight: 400,
