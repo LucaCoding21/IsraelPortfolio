@@ -20,19 +20,19 @@ function useIsMobile() {
 const photos = [
   {
     src: '/israel1.jpg',
-    alt: 'Photography by Njagih Studios',
+    alt: 'Wedding photography showcase - Njagih Studios Vancouver photographer',
   },
   {
     src: '/israel2.jpg',
-    alt: 'Photography by Njagih Studios',
+    alt: 'Event and festival photography - Njagih Studios Vancouver',
   },
   {
     src: '/isreal3.jpg',
-    alt: 'Photography by Njagih Studios',
+    alt: 'Corporate and portrait photography - Njagih Studios Vancouver',
   },
   {
     src: '/isreal4.jpg',
-    alt: 'Photography by Njagih Studios',
+    alt: 'Sports action photography - Njagih Studios Vancouver photographer',
   },
 ];
 

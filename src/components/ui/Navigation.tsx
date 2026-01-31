@@ -6,12 +6,12 @@ import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { socialLinks } from '@/lib/constants';
 
-const menuItems: { label: string; href: string; isPage?: boolean; image: string }[] = [
-  { label: 'Home', href: '#', image: '/israel1.jpg' },
-  { label: 'Portfolio', href: '/portfolio', isPage: true, image: '/israel2.jpg' },
-  { label: 'Services', href: '/services', isPage: true, image: '/isreal3.jpg' },
-  { label: 'About', href: '#about', image: '/isreal4.jpg' },
-  { label: 'Contact', href: '#contact', image: '/israel1.jpg' },
+const menuItems: { label: string; href: string; isPage?: boolean; image: string; alt: string }[] = [
+  { label: 'Home', href: '#', image: '/israel1.jpg', alt: 'Njagih Studios Vancouver - wedding and event photography' },
+  { label: 'Portfolio', href: '/portfolio', isPage: true, image: '/israel2.jpg', alt: 'Photography portfolio - events and sports by Njagih Studios' },
+  { label: 'Services', href: '/services', isPage: true, image: '/isreal3.jpg', alt: 'Professional photography services - Njagih Studios Vancouver' },
+  { label: 'About', href: '#about', image: '/isreal4.jpg', alt: 'About Israel Njagih - Vancouver photographer' },
+  { label: 'Contact', href: '#contact', image: '/israel1.jpg', alt: 'Contact Njagih Studios for photography bookings in Vancouver' },
 ];
 
 export default function Navigation() {
@@ -268,7 +268,7 @@ export default function Navigation() {
               <div className="absolute inset-0">
                 <Image
                   src="/israel2.jpg"
-                  alt="Background"
+                  alt="Njagih Studios Vancouver - event photography showcase"
                   fill
                   className="object-cover"
                   priority
@@ -588,7 +588,7 @@ export default function Navigation() {
                   >
                     <Image
                       src={item.image}
-                      alt={`${item.label} preview`}
+                      alt={item.alt}
                       fill
                       className="object-cover"
                       sizes="50vw"

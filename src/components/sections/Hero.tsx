@@ -49,7 +49,7 @@ export default function Hero() {
       >
         <Image
           src="/hero-bg.jpg"
-          alt="Soccer players in action during a night game"
+          alt="Vancouver sports photography - soccer players in action during a night game by Njagih Studios"
           fill
           className="object-cover object-center"
           priority
@@ -81,7 +81,7 @@ export default function Hero() {
       >
         <Image
           src="/cutout2.png"
-          alt="Soccer player in action"
+          alt="Soccer player action shot - sports photography by Njagih Studios Vancouver"
           fill
           className="object-cover object-center"
           style={{

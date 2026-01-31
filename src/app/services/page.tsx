@@ -37,6 +37,7 @@ const services = [
       'Online gallery for viewing & downloads',
     ],
     image: '/israel1.jpg',
+    alt: 'Vancouver wedding photographer capturing intimate couple moments - Njagih Studios',
     accent: '#6B9080',
   },
   {
@@ -55,6 +56,7 @@ const services = [
       'Social-media-ready images',
     ],
     image: '/israel2.jpg',
+    alt: 'Festival and sports event photography - live action captured by Njagih Studios Vancouver',
     accent: '#7C9CB5',
   },
   {
@@ -74,6 +76,7 @@ const services = [
       'Images for websites, marketing & social media',
     ],
     image: '/isreal3.jpg',
+    alt: 'Corporate photography and professional headshots for businesses - Njagih Studios Vancouver',
     accent: '#6B9080',
   },
 ];
@@ -124,7 +127,7 @@ function ServiceCard({
           >
             <Image
               src={service.image}
-              alt={service.title}
+              alt={service.alt}
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

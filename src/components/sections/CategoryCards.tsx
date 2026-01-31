@@ -9,6 +9,7 @@ const categories = [
   {
     title: 'View Portfolio',
     image: '/israel2.jpg',
+    alt: 'Vancouver event photography portfolio - Njagih Studios',
     href: '/portfolio',
     isPage: true,
     arrow: '→',
@@ -16,6 +17,7 @@ const categories = [
   {
     title: 'Instagram',
     image: '/israel1.jpg',
+    alt: 'Wedding photography sample from Njagih Studios Vancouver',
     href: 'https://instagram.com/njagih_studios',
     external: true,
     arrow: '↗',
@@ -23,6 +25,7 @@ const categories = [
   {
     title: 'Services',
     image: '/isreal3.jpg',
+    alt: 'Professional photography services by Njagih Studios Vancouver',
     href: '/services',
     isPage: true,
     arrow: '→',
@@ -30,6 +33,7 @@ const categories = [
   {
     title: 'Get in Touch',
     image: '/isreal4.jpg',
+    alt: 'Sports action photography by Njagih Studios Vancouver',
     href: '#contact',
     arrow: '→',
   },
@@ -249,7 +253,7 @@ export default function CategoryCards() {
                 <div className="absolute inset-0">
                   <Image
                     src={category.image}
-                    alt={category.title}
+                    alt={category.alt}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
