@@ -29,10 +29,33 @@ const portfolioImages: {
   height: number;
   category: Category[];
 }[] = [
-  { src: '/israel1.jpg', alt: 'Vancouver wedding photography - intimate moments captured by Njagih Studios', width: 800, height: 1200, category: ['ALL'] },
-  { src: '/israel2.jpg', alt: 'Festival and event photography in Vancouver by Njagih Studios', width: 800, height: 600, category: ['ALL'] },
-  { src: '/isreal3.jpg', alt: 'Corporate event photography and professional headshots - Njagih Studios Vancouver', width: 800, height: 1000, category: ['ALL'] },
-  { src: '/isreal4.jpg', alt: 'Sports action photography capturing live game moments - Njagih Studios', width: 800, height: 800, category: ['ALL'] },
+  // Existing portfolio images
+  { src: '/israel1.jpg', alt: 'Vancouver wedding photography - intimate moments captured by Njagih Studios', width: 800, height: 1200, category: ['PORTRAITS', 'EVENTS'] },
+  { src: '/israel2.jpg', alt: 'Festival and event photography in Vancouver by Njagih Studios', width: 800, height: 600, category: ['EVENTS'] },
+  { src: '/isreal3.jpg', alt: 'Corporate event photography and professional headshots - Njagih Studios Vancouver', width: 800, height: 1000, category: ['PORTRAITS'] },
+  { src: '/isreal4.jpg', alt: 'Sports action photography capturing live game moments - Njagih Studios', width: 800, height: 800, category: ['SPORTS'] },
+
+  // Sports - Soccer & Basketball
+  { src: '/filteredphotos/Aiden1v1Jun29-83.jpg', alt: 'Outdoor basketball 1v1 action shot - Njagih Studios sports photography', width: 2000, height: 1665, category: ['SPORTS'] },
+  { src: '/filteredphotos/HypRSoccersat14June-164.jpg', alt: 'HYPR Soccer players battling for the ball on the pitch - Njagih Studios', width: 1523, height: 2000, category: ['SPORTS'] },
+  { src: '/filteredphotos/HypRSoccersat14June-92.jpg', alt: 'Soccer player dribbling during HYPR Soccer match - Njagih Studios', width: 2000, height: 1925, category: ['SPORTS'] },
+  { src: '/filteredphotos/HypRSoccersat14June-95.jpg', alt: 'Soccer player in action at HYPR Soccer event - Njagih Studios sports photography', width: 1476, height: 2000, category: ['SPORTS'] },
+  { src: '/filteredphotos/Jamilu18-354.jpg', alt: 'Youth soccer match action - players competing for the ball - Njagih Studios', width: 2000, height: 1831, category: ['SPORTS'] },
+  { src: '/filteredphotos/NjagihStudios-15.JPG', alt: 'Night soccer match - two players battling for possession under the lights - Njagih Studios', width: 1333, height: 2000, category: ['SPORTS'] },
+  { src: '/filteredphotos/NjagihStudios-16.JPG', alt: 'Intense night soccer duel between players - Njagih Studios sports photography', width: 1333, height: 2000, category: ['SPORTS'] },
+
+  // Events - Motorcycle meetup night ride
+  { src: '/filteredphotos/NjagihStudios-11.JPG', alt: 'Motorcycle riders at night meetup event - Njagih Studios event photography', width: 2000, height: 1333, category: ['EVENTS'] },
+  { src: '/filteredphotos/NjagihStudios-17.JPG', alt: 'HJC helmet and riding gear on Repsol Honda motorcycle - Njagih Studios', width: 2000, height: 1333, category: ['EVENTS'] },
+  { src: '/filteredphotos/NjagihStudios-2.JPG', alt: 'Honda CBR sport bike at night with city lights - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/NjagihStudios-26.JPG', alt: 'Rider in Alpinestars gear on Repsol Honda - Njagih Studios event photography', width: 1333, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/NjagihStudios-3.JPG', alt: 'Motorcycle rider with Kawasaki at night meetup - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS', 'PORTRAITS'] },
+  { src: '/filteredphotos/NjagihStudios-4.JPG', alt: 'Rider on motorcycle with headlight glowing at night - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/NjagihStudios.JPG', alt: 'Repsol Honda CBR at motorcycle gathering - Njagih Studios event photography', width: 1333, height: 2000, category: ['EVENTS'] },
+
+  // Portraits & Lifestyle
+  { src: '/filteredphotos/HypRSoccersat14June-2.jpg', alt: 'Soccer player portrait on the bench - Njagih Studios portrait photography', width: 1338, height: 2000, category: ['PORTRAITS', 'SPORTS'] },
+  { src: '/filteredphotos/NjagihStudios-281.jpg', alt: 'Young girl focused on craftwork - Njagih Studios lifestyle photography', width: 1333, height: 2000, category: ['LIFESTYLE', 'PORTRAITS'] },
 ];
 
 export default function PortfolioPage() {
