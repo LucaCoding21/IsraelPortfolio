@@ -33,29 +33,47 @@ const portfolioImages: {
   { src: '/israel1.jpg', alt: 'Vancouver wedding photography - intimate moments captured by Njagih Studios', width: 800, height: 1200, category: ['PORTRAITS', 'EVENTS'] },
   { src: '/israel2.jpg', alt: 'Festival and event photography in Vancouver by Njagih Studios', width: 800, height: 600, category: ['EVENTS'] },
   { src: '/isreal3.jpg', alt: 'Corporate event photography and professional headshots - Njagih Studios Vancouver', width: 800, height: 1000, category: ['PORTRAITS'] },
-  { src: '/isreal4.jpg', alt: 'Sports action photography capturing live game moments - Njagih Studios', width: 800, height: 800, category: ['SPORTS'] },
+  { src: '/isreal4.jpg', alt: 'Sports action photography capturing live game moments - Njagih Studios', width: 800, height: 800, category: ['PORTRAITS'] },
 
   // Sports - Soccer & Basketball
-  { src: '/filteredphotos/Aiden1v1Jun29-83.jpg', alt: 'Outdoor basketball 1v1 action shot - Njagih Studios sports photography', width: 2000, height: 1665, category: ['SPORTS'] },
-  { src: '/filteredphotos/HypRSoccersat14June-164.jpg', alt: 'HYPR Soccer players battling for the ball on the pitch - Njagih Studios', width: 1523, height: 2000, category: ['SPORTS'] },
-  { src: '/filteredphotos/HypRSoccersat14June-92.jpg', alt: 'Soccer player dribbling during HYPR Soccer match - Njagih Studios', width: 2000, height: 1925, category: ['SPORTS'] },
-  { src: '/filteredphotos/HypRSoccersat14June-95.jpg', alt: 'Soccer player in action at HYPR Soccer event - Njagih Studios sports photography', width: 1476, height: 2000, category: ['SPORTS'] },
-  { src: '/filteredphotos/Jamilu18-354.jpg', alt: 'Youth soccer match action - players competing for the ball - Njagih Studios', width: 2000, height: 1831, category: ['SPORTS'] },
-  { src: '/filteredphotos/NjagihStudios-15.JPG', alt: 'Night soccer match - two players battling for possession under the lights - Njagih Studios', width: 1333, height: 2000, category: ['SPORTS'] },
-  { src: '/filteredphotos/NjagihStudios-16.JPG', alt: 'Intense night soccer duel between players - Njagih Studios sports photography', width: 1333, height: 2000, category: ['SPORTS'] },
+  { src: '/filteredphotos/recents/indoor-basketball-league-game-dribble-action-vancouver.webp', alt: 'Indoor basketball league game with player dribbling through defenders in Vancouver - Njagih Studios sports photography', width: 1440, height: 960, category: ['SPORTS'] },
+  { src: '/filteredphotos/outdoor-basketball-one-on-one-dribble-action-vancouver.webp', alt: 'Outdoor basketball 1v1 action shot on Vancouver park court - Njagih Studios sports photography', width: 2000, height: 1665, category: ['SPORTS'] },
+  { src: '/filteredphotos/hypr-soccer-players-dribbling-turf-field-vancouver.webp', alt: 'HYPR Soccer players competing for the ball on Vancouver turf field - Njagih Studios sports photography', width: 1523, height: 2000, category: ['SPORTS'] },
+  { src: '/filteredphotos/hypr-soccer-player-dribbling-action-shot-vancouver.webp', alt: 'HYPR Soccer player dribbling past defenders during outdoor match in Vancouver - Njagih Studios', width: 2000, height: 1925, category: ['SPORTS'] },
+  { src: '/filteredphotos/hypr-soccer-player-running-with-ball-vancouver.webp', alt: 'HYPR Soccer player sprinting with the ball during competitive match - Njagih Studios sports photography Vancouver', width: 1476, height: 2000, category: ['SPORTS'] },
+  { src: '/filteredphotos/youth-soccer-match-action-photography-vancouver.webp', alt: 'Youth academy soccer match action with players competing on Vancouver pitch - Njagih Studios sports photography', width: 2000, height: 1831, category: ['SPORTS'] },
+  { src: '/filteredphotos/recents/youth-kids-soccer-player-dribbling-turf-field-vancouver.webp', alt: 'Young kid dribbling soccer ball on turf field in Vancouver - Njagih Studios youth sports photography', width: 1440, height: 1754, category: ['SPORTS'] },
+  { src: '/filteredphotos/night-soccer-match-players-battling-ball-vancouver.webp', alt: 'Night soccer match with two players battling for possession under floodlights - Njagih Studios Vancouver', width: 1333, height: 2000, category: ['SPORTS'] },
+  { src: '/filteredphotos/night-soccer-tackle-action-photography-vancouver.webp', alt: 'Intense night soccer duel between players challenging for the ball - Njagih Studios sports photography Vancouver', width: 1333, height: 2000, category: ['SPORTS'] },
 
   // Events - Motorcycle meetup night ride
-  { src: '/filteredphotos/NjagihStudios-11.JPG', alt: 'Motorcycle riders at night meetup event - Njagih Studios event photography', width: 2000, height: 1333, category: ['EVENTS'] },
-  { src: '/filteredphotos/NjagihStudios-17.JPG', alt: 'HJC helmet and riding gear on Repsol Honda motorcycle - Njagih Studios', width: 2000, height: 1333, category: ['EVENTS'] },
-  { src: '/filteredphotos/NjagihStudios-2.JPG', alt: 'Honda CBR sport bike at night with city lights - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS'] },
-  { src: '/filteredphotos/NjagihStudios-26.JPG', alt: 'Rider in Alpinestars gear on Repsol Honda - Njagih Studios event photography', width: 1333, height: 2000, category: ['EVENTS'] },
-  { src: '/filteredphotos/NjagihStudios-3.JPG', alt: 'Motorcycle rider with Kawasaki at night meetup - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS', 'PORTRAITS'] },
-  { src: '/filteredphotos/NjagihStudios-4.JPG', alt: 'Rider on motorcycle with headlight glowing at night - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS'] },
-  { src: '/filteredphotos/NjagihStudios.JPG', alt: 'Repsol Honda CBR at motorcycle gathering - Njagih Studios event photography', width: 1333, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/motorcycle-night-ride-meetup-honda-cbr-vancouver.webp', alt: 'Motorcycle riders at Vancouver night meetup with Honda CBR sport bikes - Njagih Studios event photography', width: 2000, height: 1333, category: ['EVENTS'] },
+  { src: '/filteredphotos/hjc-helmet-repsol-honda-motorcycle-detail-vancouver.webp', alt: 'HJC helmet and riding gloves on Repsol Honda HRC motorcycle closeup - Njagih Studios Vancouver', width: 2000, height: 1333, category: ['EVENTS'] },
+  { src: '/filteredphotos/honda-cbr-sport-bike-night-photography-vancouver.webp', alt: 'Honda CBR sport bike parked at night with city lights in Vancouver - Njagih Studios motorcycle photography', width: 1333, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/alpinestars-rider-repsol-honda-cbr-night-vancouver.webp', alt: 'Rider in Alpinestars leather suit on Repsol Honda CBR at Vancouver night ride - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/motorcycle-rider-portrait-kawasaki-night-meetup-vancouver.webp', alt: 'Motorcycle rider portrait with Kawasaki and GoPro helmet cam at Vancouver night meetup - Njagih Studios', width: 1333, height: 2000, category: ['EVENTS', 'PORTRAITS'] },
+  { src: '/filteredphotos/motorcycle-rider-headlight-night-ride-vancouver.webp', alt: 'Motorcycle rider with glowing headlight at Vancouver night ride event - Njagih Studios event photography', width: 1333, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/repsol-honda-cbr-motorcycle-gathering-night-vancouver.webp', alt: 'Repsol Honda CBR motorcycle at Vancouver night gathering with riders - Njagih Studios event photography', width: 1333, height: 2000, category: ['EVENTS'] },
 
   // Portraits & Lifestyle
-  { src: '/filteredphotos/HypRSoccersat14June-2.jpg', alt: 'Soccer player portrait on the bench - Njagih Studios portrait photography', width: 1338, height: 2000, category: ['PORTRAITS', 'SPORTS'] },
-  { src: '/filteredphotos/NjagihStudios-281.jpg', alt: 'Young girl focused on craftwork - Njagih Studios lifestyle photography', width: 1333, height: 2000, category: ['LIFESTYLE', 'PORTRAITS'] },
+  { src: '/filteredphotos/soccer-player-portrait-bench-cleats-vancouver.webp', alt: 'Soccer player portrait sitting on bench with ball and cleats in Vancouver - Njagih Studios portrait photography', width: 1338, height: 2000, category: ['PORTRAITS', 'SPORTS'] },
+  { src: '/filteredphotos/recents/urban-streetwear-party-portrait-photography-vancouver.webp', alt: 'Two friends posing at outdoor streetwear party event in Vancouver - Njagih Studios portrait photography', width: 1440, height: 1920, category: ['PORTRAITS', 'EVENTS'] },
+  { src: '/filteredphotos/young-girl-crochet-craftwork-lifestyle-portrait.webp', alt: 'Young girl focused on crochet craftwork in warm light - Njagih Studios lifestyle portrait photography', width: 1333, height: 2000, category: ['LIFESTYLE', 'PORTRAITS'] },
+
+  // Events - DJ / Party
+  { src: '/filteredphotos/Bang-23.webp', alt: 'DJ hands mixing on controller with glowing pads at nightclub event - Njagih Studios event photography', width: 2000, height: 1334, category: ['EVENTS'] },
+  { src: '/filteredphotos/Bang-5.webp', alt: 'DJ portrait performing live set at lounge event - Njagih Studios event photography', width: 1334, height: 2000, category: ['EVENTS', 'PORTRAITS'] },
+
+  // Weddings
+  { src: '/filteredphotos/wedding/wedding.webp', alt: 'Bride hands with gold jewelry and rings on white satin wedding dress - Njagih Studios wedding photography', width: 2000, height: 1334, category: ['EVENTS'] },
+  { src: '/filteredphotos/wedding/wedding-2.webp', alt: 'Bride and groom sharing intimate moment under pearl-beaded veil at reception - Njagih Studios wedding photography', width: 1334, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/wedding/wedding-3.webp', alt: 'Couple embracing under pearl veil with blue reception lighting - Njagih Studios wedding photography', width: 1334, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/wedding/wedding-4.webp', alt: 'Black and white wedding portrait of couple dancing at decorated reception venue - Njagih Studios wedding photography', width: 1500, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/wedding/wedding-5.webp', alt: 'Bride and groom cutting pink marble tiered wedding cake at outdoor ceremony - Njagih Studios wedding photography', width: 1334, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/wedding/wedding-6.webp', alt: 'Couple cutting wedding cake at outdoor tent reception with guests - Njagih Studios wedding photography', width: 1334, height: 2000, category: ['EVENTS'] },
+  { src: '/filteredphotos/wedding/wedding-7.webp', alt: 'Bride smiling in robe holding bouquet of white roses during bridal preparation - Njagih Studios wedding photography', width: 1334, height: 2000, category: ['EVENTS', 'PORTRAITS'] },
+  { src: '/filteredphotos/wedding/wedding-8.webp', alt: 'Bride portrait in beaded lace gown and veil holding white rose bouquet - Njagih Studios wedding photography', width: 1537, height: 2000, category: ['EVENTS', 'PORTRAITS'] },
+  { src: '/filteredphotos/wedding/wedding-9.webp', alt: 'Wedding vows booklet with bridal bouquet perfume and gold jewelry details - Njagih Studios wedding photography', width: 1334, height: 2000, category: ['EVENTS'] },
 ];
 
 export default function PortfolioPage() {

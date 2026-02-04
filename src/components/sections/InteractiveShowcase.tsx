@@ -1,9 +1,8 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 // Hook to detect mobile
 function useIsMobile() {
@@ -19,8 +18,8 @@ function useIsMobile() {
 
 const photos = [
   {
-    src: '/israel1.jpg',
-    alt: 'Wedding photography showcase - Njagih Studios Vancouver photographer',
+    src: '/filteredphotos/recents/urban-streetwear-party-portrait-photography-vancouver.webp',
+    alt: 'Two friends posing at outdoor streetwear party event in Vancouver - Njagih Studios portrait photography',
   },
   {
     src: '/israel2.jpg',
@@ -33,6 +32,22 @@ const photos = [
   {
     src: '/isreal4.jpg',
     alt: 'Sports action photography - Njagih Studios Vancouver photographer',
+  },
+  {
+    src: '/filteredphotos/motorcycle-night-ride-meetup-honda-cbr-vancouver.webp',
+    alt: 'Motorcycle riders at Vancouver night meetup with Honda CBR sport bikes - Njagih Studios event photography',
+  },
+  {
+    src: '/filteredphotos/hypr-soccer-players-dribbling-turf-field-vancouver.webp',
+    alt: 'HYPR Soccer players competing for the ball on Vancouver turf field - Njagih Studios sports photography',
+  },
+  {
+    src: '/filteredphotos/young-girl-crochet-craftwork-lifestyle-portrait.webp',
+    alt: 'Young girl focused on crochet craftwork in warm light - Njagih Studios lifestyle portrait photography',
+  },
+  {
+    src: '/filteredphotos/recents/indoor-basketball-league-game-dribble-action-vancouver.webp',
+    alt: 'Indoor basketball league game with player dribbling through defenders in Vancouver - Njagih Studios sports photography',
   },
 ];
 
@@ -104,12 +119,35 @@ function PhotoCard({
 export default function InteractiveShowcase() {
   const containerRef = useRef<HTMLElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
-  const router = useRouter();
   const isMobile = useIsMobile();
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const handlePhotoClick = () => {
-    router.push('/portfolio');
+  const handlePortfolioClick = () => {
+    window.location.href = '/portfolio';
   };
+
+  // Close lightbox on escape, navigate with arrow keys
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+      if (selectedImage !== null) {
+        if (e.key === 'ArrowRight') setSelectedImage((prev) => (prev! + 1) % photos.length);
+        if (e.key === 'ArrowLeft') setSelectedImage((prev) => (prev! - 1 + photos.length) % photos.length);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [selectedImage]);
 
   return (
     <section
@@ -152,77 +190,73 @@ export default function InteractiveShowcase() {
           </h2>
         </motion.div>
 
-        {/* Bento Grid - 2x2 staggered on mobile, asymmetric on desktop */}
-        {/* Mobile: 2-column with fixed heights */}
-        {/* Desktop: 12-column grid with proper row heights */}
+        {/* Bento Grid - staggered on mobile, asymmetric on desktop */}
         <div className="grid grid-cols-2 gap-3 md:hidden">
-          {/* Mobile layout - staggered 2x2 */}
+          {/* Mobile layout - staggered 2-column */}
           <div className="space-y-3">
             <div className="h-[280px]">
-              <PhotoCard src={photos[0].src} alt={photos[0].alt} className="h-full w-full" delay={0} onClick={handlePhotoClick} isMobile={isMobile} />
+              <PhotoCard src={photos[0].src} alt={photos[0].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(0)} isMobile={isMobile} />
             </div>
             <div className="h-[200px]">
-              <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0.2} onClick={handlePhotoClick} isMobile={isMobile} />
+              <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(2)} isMobile={isMobile} />
+            </div>
+            <div className="h-[260px]">
+              <PhotoCard src={photos[4].src} alt={photos[4].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(4)} isMobile={isMobile} />
+            </div>
+            <div className="h-[220px]">
+              <PhotoCard src={photos[6].src} alt={photos[6].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(6)} isMobile={isMobile} />
             </div>
           </div>
           <div className="mt-12 space-y-3">
             <div className="h-[220px]">
-              <PhotoCard src={photos[1].src} alt={photos[1].alt} className="h-full w-full" delay={0.1} onClick={handlePhotoClick} isMobile={isMobile} />
+              <PhotoCard src={photos[1].src} alt={photos[1].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(1)} isMobile={isMobile} />
             </div>
             <div className="h-[260px]">
-              <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0.3} onClick={handlePhotoClick} isMobile={isMobile} />
+              <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(3)} isMobile={isMobile} />
+            </div>
+            <div className="h-[200px]">
+              <PhotoCard src={photos[5].src} alt={photos[5].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(5)} isMobile={isMobile} />
+            </div>
+            <div className="h-[280px]">
+              <PhotoCard src={photos[7].src} alt={photos[7].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(7)} isMobile={isMobile} />
             </div>
           </div>
         </div>
 
-        {/* Desktop layout - original bento grid */}
-        <div className="hidden md:grid md:grid-cols-12 md:grid-rows-2 md:gap-4" style={{ height: 'auto', minHeight: '70vh' }}>
-          {/* Left tall image - spans both rows */}
-          <div className="md:col-span-4 md:row-span-2 h-auto">
-            <PhotoCard
-              src={photos[0].src}
-              alt={photos[0].alt}
-              className="h-full w-full"
-              delay={0}
-              onClick={handlePhotoClick}
-              isMobile={isMobile}
-            />
+        {/* Desktop layout - expanded bento grid */}
+        <div className="hidden md:grid md:grid-cols-12 md:gap-4" style={{ gridTemplateRows: '320px 320px 300px 300px' }}>
+          {/* Row 1-2: Left tall image spanning 2 rows */}
+          <div className="md:col-span-5" style={{ gridRow: '1 / 3' }}>
+            <PhotoCard src={photos[0].src} alt={photos[0].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(0)} isMobile={isMobile} />
+          </div>
+          {/* Row 1: Top middle */}
+          <div className="md:col-span-3">
+            <PhotoCard src={photos[1].src} alt={photos[1].alt} className="h-full w-full" delay={0.1} onClick={() => setSelectedImage(1)} isMobile={isMobile} />
+          </div>
+          {/* Row 1: Top right */}
+          <div className="md:col-span-4">
+            <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0.15} onClick={() => setSelectedImage(2)} isMobile={isMobile} />
+          </div>
+          {/* Row 2: Wide right */}
+          <div className="md:col-span-7">
+            <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0.2} onClick={() => setSelectedImage(3)} isMobile={isMobile} />
           </div>
 
-          {/* Top middle image */}
-          <div className="md:col-span-4 md:row-span-1 h-auto">
-            <PhotoCard
-              src={photos[1].src}
-              alt={photos[1].alt}
-              className="h-full w-full"
-              delay={0.1}
-              onClick={handlePhotoClick}
-              isMobile={isMobile}
-            />
+          {/* Row 3: Wide left */}
+          <div className="md:col-span-7">
+            <PhotoCard src={photos[4].src} alt={photos[4].alt} className="h-full w-full" delay={0.25} onClick={() => setSelectedImage(4)} isMobile={isMobile} />
           </div>
-
-          {/* Top right image */}
-          <div className="md:col-span-4 md:row-span-1 h-auto">
-            <PhotoCard
-              src={photos[2].src}
-              alt={photos[2].alt}
-              className="h-full w-full"
-              delay={0.2}
-              onClick={handlePhotoClick}
-              isMobile={isMobile}
-            />
+          {/* Row 3-4: Tall right spanning 2 rows */}
+          <div className="md:col-span-5" style={{ gridRow: '3 / 5' }}>
+            <PhotoCard src={photos[5].src} alt={photos[5].alt} className="h-full w-full" delay={0.3} onClick={() => setSelectedImage(5)} isMobile={isMobile} />
           </div>
-
-          {/* Bottom wide image - spans middle and right columns */}
-          <div className="md:col-span-8 md:row-span-1 h-auto">
-            <PhotoCard
-              src={photos[3].src}
-              alt={photos[3].alt}
-              className="h-full w-full"
-              delay={0.3}
-              onClick={handlePhotoClick}
-              isMobile={isMobile}
-            />
+          {/* Row 4: Bottom left */}
+          <div className="md:col-span-3">
+            <PhotoCard src={photos[6].src} alt={photos[6].alt} className="h-full w-full" delay={0.35} onClick={() => setSelectedImage(6)} isMobile={isMobile} />
+          </div>
+          {/* Row 4: Bottom middle */}
+          <div className="md:col-span-4">
+            <PhotoCard src={photos[7].src} alt={photos[7].alt} className="h-full w-full" delay={0.4} onClick={() => setSelectedImage(7)} isMobile={isMobile} />
           </div>
         </div>
 
@@ -235,7 +269,7 @@ export default function InteractiveShowcase() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <button
-            onClick={handlePhotoClick}
+            onClick={handlePortfolioClick}
             className="group inline-flex items-center gap-2"
           >
             <span
@@ -265,6 +299,89 @@ export default function InteractiveShowcase() {
         </motion.div>
       </div>
 
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedImage !== null && (
+          <motion.div
+            className="fixed inset-0 z-[200] flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Backdrop */}
+            <motion.div
+              className="absolute inset-0"
+              style={{ backgroundColor: 'rgba(26, 43, 60, 0.95)' }}
+              onClick={() => setSelectedImage(null)}
+            />
+
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20 md:right-6 md:top-6 md:h-12 md:w-12 md:bg-transparent md:hover:bg-white/10"
+              aria-label="Close lightbox"
+            >
+              <svg className="h-5 w-5 md:h-6 md:w-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Previous arrow */}
+            <button
+              onClick={() => setSelectedImage((prev) => (prev! - 1 + photos.length) % photos.length)}
+              className="absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20 md:left-8 md:h-12 md:w-12 md:bg-transparent md:hover:bg-white/10"
+              aria-label="Previous image"
+            >
+              <svg className="h-5 w-5 md:h-6 md:w-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Next arrow */}
+            <button
+              onClick={() => setSelectedImage((prev) => (prev! + 1) % photos.length)}
+              className="absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20 md:right-8 md:h-12 md:w-12 md:bg-transparent md:hover:bg-white/10"
+              aria-label="Next image"
+            >
+              <svg className="h-5 w-5 md:h-6 md:w-6" fill="none" stroke="white" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Image */}
+            <motion.div
+              key={selectedImage}
+              className="relative z-10 max-h-[80vh] max-w-[92vw] md:max-h-[85vh] md:max-w-[90vw]"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Image
+                src={photos[selectedImage].src}
+                alt={photos[selectedImage].alt}
+                width={1200}
+                height={1200}
+                className="max-h-[80vh] w-auto rounded-md object-contain md:max-h-[85vh] md:rounded-lg"
+                priority
+              />
+            </motion.div>
+
+            {/* Image counter */}
+            <div
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 md:bottom-6"
+              style={{
+                fontFamily: "'Source Sans 3', sans-serif",
+                fontSize: '0.75rem',
+                color: 'rgba(255, 255, 255, 0.7)',
+              }}
+            >
+              <span className="md:text-sm">{selectedImage + 1} / {photos.length}</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

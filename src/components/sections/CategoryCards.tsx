@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 const categories = [
   {
@@ -171,13 +170,11 @@ function CardOverlay({ index }: { index: number }) {
 export default function CategoryCards() {
   const containerRef = useRef<HTMLElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-50px' });
-  const router = useRouter();
-
   const handleClick = (href: string, external?: boolean, isPage?: boolean) => {
     if (external) {
       window.open(href, '_blank');
     } else if (isPage) {
-      router.push(href);
+      window.location.href = href;
     } else {
       const element = document.querySelector(href);
       if (element) {

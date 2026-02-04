@@ -36,8 +36,8 @@ const services = [
       'Detail & atmosphere shots',
       'Online gallery for viewing & downloads',
     ],
-    image: '/israel1.jpg',
-    alt: 'Vancouver wedding photographer capturing intimate couple moments - Njagih Studios',
+    image: '/filteredphotos/wedding.webp',
+    alt: 'Wedding photography by Njagih Studios Vancouver - bride and groom intimate couple portrait during ceremony',
     accent: '#6B9080',
   },
   {
