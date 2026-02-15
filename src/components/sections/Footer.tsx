@@ -359,6 +359,26 @@ export default function Footer() {
             &copy; {currentYear} Njagih Studios. All rights reserved.
           </p>
 
+          {/* Site credit */}
+          <p
+            className="text-center text-[0.625rem] md:text-xs"
+            style={{
+              fontFamily: "'Source Sans 3', sans-serif",
+              color: 'rgba(255, 255, 255, 0.3)',
+            }}
+          >
+            Built with care by{' '}
+            <a
+              href="https://cloverfield.studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-300 hover:text-[#6B9080]"
+              style={{ color: 'rgba(255, 255, 255, 0.5)' }}
+            >
+              cloverfield
+            </a>
+          </p>
+
           {/* Tagline */}
           <p
             className="text-center text-[0.625rem] md:text-xs"
