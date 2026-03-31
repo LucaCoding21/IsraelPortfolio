@@ -26,24 +26,27 @@ const photos = [
     alt: 'Event and festival photography - Njagih Studios Vancouver',
   },
   {
-    src: '/isreal3.jpg',
-    alt: 'Corporate and portrait photography - Njagih Studios Vancouver',
+    src: '/filteredphotos/fitness-athlete-battle-ropes-gym-portrait.webp',
+    alt: 'Fitness athlete seated with battle ropes in gym portrait session - Njagih Studios fitness photography',
+    objectPosition: 'top',
   },
   {
-    src: '/isreal4.jpg',
-    alt: 'Sports action photography - Njagih Studios Vancouver photographer',
+    src: '/filteredphotos/speaker-podium-surrey-event-photography.webp',
+    alt: 'Keynote speaker presenting at podium during Surrey community event - Njagih Studios event photography',
+    objectPosition: 'top',
   },
   {
-    src: '/filteredphotos/motorcycle-night-ride-meetup-honda-cbr-vancouver.webp',
-    alt: 'Motorcycle riders at Vancouver night meetup with Honda CBR sport bikes - Njagih Studios event photography',
+    src: '/filteredphotos/woman-yellow-blazer-editorial-portrait-vancouver.webp',
+    alt: 'Woman in yellow blazer seated in armchair for editorial portrait session - Njagih Studios fashion photography Vancouver',
+    objectPosition: 'top',
   },
   {
     src: '/filteredphotos/hypr-soccer-players-dribbling-turf-field-vancouver.webp',
     alt: 'HYPR Soccer players competing for the ball on Vancouver turf field - Njagih Studios sports photography',
   },
   {
-    src: '/filteredphotos/young-girl-crochet-craftwork-lifestyle-portrait.webp',
-    alt: 'Young girl focused on crochet craftwork in warm light - Njagih Studios lifestyle portrait photography',
+    src: '/filteredphotos/woman-floral-dress-laughing-portrait-photography.webp',
+    alt: 'Woman in floral dress laughing against wooden wall in moody lighting - Njagih Studios portrait photography',
   },
   {
     src: '/filteredphotos/recents/indoor-basketball-league-game-dribble-action-vancouver.webp',
@@ -58,6 +61,7 @@ function PhotoCard({
   delay,
   onClick,
   isMobile,
+  objectPosition,
 }: {
   src: string;
   alt: string;
@@ -65,6 +69,7 @@ function PhotoCard({
   delay: number;
   onClick: () => void;
   isMobile: boolean;
+  objectPosition?: string;
 }) {
   // On mobile, skip whileInView animations for performance
   return (
@@ -83,6 +88,7 @@ function PhotoCard({
         alt={alt}
         fill
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            style={objectPosition ? { objectPosition } : undefined}
         sizes="(max-width: 768px) 100vw, 50vw"
       />
       {/* Hover overlay - dark */}
@@ -198,10 +204,10 @@ export default function InteractiveShowcase() {
               <PhotoCard src={photos[0].src} alt={photos[0].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(0)} isMobile={isMobile} />
             </div>
             <div className="h-[200px]">
-              <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(2)} isMobile={isMobile} />
+              <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(2)} isMobile={isMobile} objectPosition={photos[2].objectPosition} />
             </div>
             <div className="h-[260px]">
-              <PhotoCard src={photos[4].src} alt={photos[4].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(4)} isMobile={isMobile} />
+              <PhotoCard src={photos[4].src} alt={photos[4].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(4)} isMobile={isMobile} objectPosition={photos[4].objectPosition} />
             </div>
             <div className="h-[220px]">
               <PhotoCard src={photos[6].src} alt={photos[6].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(6)} isMobile={isMobile} />
@@ -212,7 +218,7 @@ export default function InteractiveShowcase() {
               <PhotoCard src={photos[1].src} alt={photos[1].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(1)} isMobile={isMobile} />
             </div>
             <div className="h-[260px]">
-              <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(3)} isMobile={isMobile} />
+              <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(3)} isMobile={isMobile} objectPosition={photos[3].objectPosition} />
             </div>
             <div className="h-[200px]">
               <PhotoCard src={photos[5].src} alt={photos[5].alt} className="h-full w-full" delay={0} onClick={() => setSelectedImage(5)} isMobile={isMobile} />
@@ -235,26 +241,25 @@ export default function InteractiveShowcase() {
           </div>
           {/* Row 1: Top right */}
           <div className="md:col-span-4">
-            <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0.15} onClick={() => setSelectedImage(2)} isMobile={isMobile} />
+            <PhotoCard src={photos[2].src} alt={photos[2].alt} className="h-full w-full" delay={0.15} onClick={() => setSelectedImage(2)} isMobile={isMobile} objectPosition={photos[2].objectPosition} />
           </div>
-          {/* Row 2: Wide right */}
-          <div className="md:col-span-7">
-            <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0.2} onClick={() => setSelectedImage(3)} isMobile={isMobile} />
+          {/* Row 2-3: Tall middle spanning 2 rows */}
+          <div className="md:col-span-3" style={{ gridRow: '2 / 4' }}>
+            <PhotoCard src={photos[3].src} alt={photos[3].alt} className="h-full w-full" delay={0.2} onClick={() => setSelectedImage(3)} isMobile={isMobile} objectPosition={photos[3].objectPosition} />
           </div>
-
-          {/* Row 3: Wide left */}
-          <div className="md:col-span-7">
-            <PhotoCard src={photos[4].src} alt={photos[4].alt} className="h-full w-full" delay={0.25} onClick={() => setSelectedImage(4)} isMobile={isMobile} />
+          {/* Row 2-3: Tall right spanning 2 rows */}
+          <div className="md:col-span-4" style={{ gridRow: '2 / 4' }}>
+            <PhotoCard src={photos[4].src} alt={photos[4].alt} className="h-full w-full" delay={0.25} onClick={() => setSelectedImage(4)} isMobile={isMobile} objectPosition={photos[4].objectPosition} />
           </div>
-          {/* Row 3-4: Tall right spanning 2 rows */}
+          {/* Row 3-4: Tall left spanning 2 rows */}
           <div className="md:col-span-5" style={{ gridRow: '3 / 5' }}>
             <PhotoCard src={photos[5].src} alt={photos[5].alt} className="h-full w-full" delay={0.3} onClick={() => setSelectedImage(5)} isMobile={isMobile} />
           </div>
-          {/* Row 4: Bottom left */}
+          {/* Row 4: Bottom middle */}
           <div className="md:col-span-3">
             <PhotoCard src={photos[6].src} alt={photos[6].alt} className="h-full w-full" delay={0.35} onClick={() => setSelectedImage(6)} isMobile={isMobile} />
           </div>
-          {/* Row 4: Bottom middle */}
+          {/* Row 4: Bottom right */}
           <div className="md:col-span-4">
             <PhotoCard src={photos[7].src} alt={photos[7].alt} className="h-full w-full" delay={0.4} onClick={() => setSelectedImage(7)} isMobile={isMobile} />
           </div>

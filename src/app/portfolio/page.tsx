@@ -59,6 +59,32 @@ const portfolioImages: {
   { src: '/filteredphotos/soccer-player-portrait-bench-cleats-vancouver.webp', alt: 'Soccer player portrait sitting on bench with ball and cleats in Vancouver - Njagih Studios portrait photography', width: 1338, height: 2000, category: ['PORTRAITS', 'SPORTS'] },
   { src: '/filteredphotos/recents/urban-streetwear-party-portrait-photography-vancouver.webp', alt: 'Two friends posing at outdoor streetwear party event in Vancouver - Njagih Studios portrait photography', width: 1440, height: 1920, category: ['PORTRAITS', 'EVENTS'] },
   { src: '/filteredphotos/young-girl-crochet-craftwork-lifestyle-portrait.webp', alt: 'Young girl focused on crochet craftwork in warm light - Njagih Studios lifestyle portrait photography', width: 1333, height: 2000, category: ['LIFESTYLE', 'PORTRAITS'] },
+  { src: '/filteredphotos/woman-yellow-blazer-editorial-portrait-vancouver.webp', alt: 'Woman in yellow blazer seated in armchair for editorial portrait session - Njagih Studios fashion photography Vancouver', width: 1200, height: 1800, category: ['PORTRAITS', 'LIFESTYLE'] },
+  { src: '/filteredphotos/woman-floral-dress-laughing-portrait-photography.webp', alt: 'Woman in floral dress laughing against wooden wall in moody lighting - Njagih Studios portrait photography', width: 1200, height: 1800, category: ['PORTRAITS', 'LIFESTYLE'] },
+  { src: '/filteredphotos/woman-laughing-golden-locs-portrait-photography.webp', alt: 'Woman with golden locs laughing joyfully against wooden wall in warm lighting - Njagih Studios portrait photography', width: 1200, height: 1800, category: ['PORTRAITS', 'LIFESTYLE'] },
+  { src: '/filteredphotos/man-olive-suit-outdoor-portrait-photography.webp', alt: 'Man in olive green suit smiling outdoors with soft bokeh background - Njagih Studios portrait photography Vancouver', width: 1200, height: 1800, category: ['PORTRAITS'] },
+  { src: '/filteredphotos/man-seated-lounge-corporate-portrait-photography.webp', alt: 'Man seated in lounge chair smiling for corporate portrait with beaded necklace - Njagih Studios portrait photography', width: 1200, height: 800, category: ['PORTRAITS'] },
+  { src: '/filteredphotos/man-sauna-wellness-portrait-photography.webp', alt: 'Man relaxing in sauna with towel draped over shoulder - Njagih Studios wellness portrait photography', width: 1200, height: 800, category: ['LIFESTYLE', 'PORTRAITS'] },
+  { src: '/filteredphotos/two-women-dancing-joyful-event-photography.webp', alt: 'Two women dancing and laughing at indoor social event - Njagih Studios event lifestyle photography', width: 1200, height: 800, category: ['LIFESTYLE', 'EVENTS'] },
+
+  // Fitness
+  { src: '/filteredphotos/fitness-athlete-battle-ropes-gym-portrait.webp', alt: 'Fitness athlete seated with battle ropes in gym portrait session - Njagih Studios fitness photography', width: 1200, height: 1800, category: ['PORTRAITS', 'LIFESTYLE'] },
+  { src: '/filteredphotos/fitness-athlete-squatting-gym-portrait-photography.webp', alt: 'Fitness athlete squatting with battle ropes in gym - Njagih Studios fitness portrait photography', width: 1200, height: 1801, category: ['PORTRAITS', 'LIFESTYLE'] },
+  { src: '/filteredphotos/woman-battle-ropes-workout-gym-fitness-photography.webp', alt: 'Woman training with battle ropes during intense gym workout - Njagih Studios fitness photography', width: 1200, height: 1800, category: ['PORTRAITS', 'LIFESTYLE'] },
+  { src: '/filteredphotos/woman-dumbbell-press-gym-fitness-photography.webp', alt: 'Woman performing incline dumbbell press at gym - Njagih Studios fitness photography', width: 1200, height: 1800, category: ['PORTRAITS', 'LIFESTYLE'] },
+  { src: '/filteredphotos/woman-checking-smartwatch-gym-fitness-photography.webp', alt: 'Woman checking smartwatch between sets at gym - Njagih Studios fitness lifestyle photography', width: 1200, height: 1800, category: ['LIFESTYLE', 'PORTRAITS'] },
+
+  // Sports - Youth Soccer (March)
+  { src: '/filteredphotos/father-son-youth-soccer-field-portrait-photography.webp', alt: 'Father and son posing together at youth soccer field after game - Njagih Studios sports portrait photography', width: 1200, height: 1800, category: ['SPORTS', 'PORTRAITS'] },
+  { src: '/filteredphotos/kids-soccer-match-action-sports-photography.webp', alt: 'Kids competing for the ball during youth soccer match on green pitch - Njagih Studios sports photography', width: 1200, height: 800, category: ['SPORTS'] },
+  { src: '/filteredphotos/youth-soccer-players-competing-action-photography.webp', alt: 'Two youth soccer players battling for possession during outdoor match - Njagih Studios sports photography', width: 1200, height: 1800, category: ['SPORTS'] },
+  { src: '/filteredphotos/boy-kicking-soccer-ball-action-sports-photography.webp', alt: 'Boy kicking soccer ball on grass field during youth match - Njagih Studios sports action photography', width: 1200, height: 1800, category: ['SPORTS'] },
+  { src: '/filteredphotos/youth-soccer-team-bench-sports-photography.webp', alt: 'Youth soccer team sitting together on bench during halftime break - Njagih Studios sports photography', width: 1200, height: 800, category: ['SPORTS'] },
+
+  // Events - Speaking & Music (March)
+  { src: '/filteredphotos/speaker-podium-surrey-event-photography.webp', alt: 'Keynote speaker presenting at podium during Surrey community event - Njagih Studios event photography', width: 1200, height: 1800, category: ['EVENTS'] },
+  { src: '/filteredphotos/woman-speaker-stage-event-photography-vancouver.webp', alt: 'Woman speaking on stage at Vancouver conference event - Njagih Studios event photography', width: 1200, height: 800, category: ['EVENTS'] },
+  { src: '/filteredphotos/musician-playing-guitar-stage-event-photography.webp', alt: 'Musician playing acoustic guitar on stage at live event - Njagih Studios event photography', width: 1200, height: 1800, category: ['EVENTS'] },
 
   // Events - DJ / Party
   { src: '/filteredphotos/Bang-23.webp', alt: 'DJ hands mixing on controller with glowing pads at nightclub event - Njagih Studios event photography', width: 2000, height: 1334, category: ['EVENTS'] },
