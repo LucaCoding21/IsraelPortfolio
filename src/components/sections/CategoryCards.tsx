@@ -7,7 +7,7 @@ import Image from 'next/image';
 const categories = [
   {
     title: 'View Portfolio',
-    image: '/israel2.jpg',
+    image: '/ig.jpg',
     alt: 'Vancouver event photography portfolio - Njagih Studios',
     href: '/portfolio',
     isPage: true,
@@ -15,7 +15,7 @@ const categories = [
   },
   {
     title: 'Instagram',
-    image: '/israel1.jpg',
+    image: '/ig.jpg',
     alt: 'Wedding photography sample from Njagih Studios Vancouver',
     href: 'https://instagram.com/njagih_studios',
     external: true,
@@ -23,7 +23,7 @@ const categories = [
   },
   {
     title: 'Services',
-    image: '/isreal3.jpg',
+    image: '/ig.jpg',
     alt: 'Professional photography services by Njagih Studios Vancouver',
     href: '/services',
     isPage: true,
@@ -31,7 +31,7 @@ const categories = [
   },
   {
     title: 'Get in Touch',
-    image: '/isreal4.jpg',
+    image: '/ig.jpg',
     alt: 'Sports action photography by Njagih Studios Vancouver',
     href: '#contact',
     arrow: '→',
